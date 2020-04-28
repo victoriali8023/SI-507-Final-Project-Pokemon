@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8"/>
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Find Your Pokemon</title>
+</head>
+<style>
+    body{
+        /* background-image: url("https://image.winudf.com/v2/image/Y29tLmhkcG9rZW1vbi53YWxscGFwZXJfc2NyZWVuXzZfMTUzMDE2Nzk0MV8wNjY/screen-6.jpg?fakeurl=1&type=.jpg"); */
+        /* background-image: url('http://wallpaperheart.com/wp-content/uploads/2018/04/pikachu_wallpaper_by_thedmwarrior-pokemon-wallpaper.jpg'); */
+        background-image: url('http://images6.fanpop.com/image/photos/40000000/Pokemon-Background-Designs40-earn-gold-here-40015982-1920-1080.jpg');
+        /* background-repeat: no-repeat;
+        background-size: 100% 35%; */
+        /* background-color: darksalmon; */
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center; 
+        
+    }
+    img{
+        width:10%;
+    }
+    .col-xs-2{
+        width: auto;
+        padding: 0 550px;
+        text-align: center;
+    }
+    footer{
+        text-align: center;
+        color: grey;
+    }
+    
+</style>
+<body>
+    <form action="/profile" method="POST">
+    <h1>Find Your Favourite Pokemon</h1>
+    <div class="col-xs-2">
+        <p>What's your name? </p>
+        <input name="name" type="text" class="form-control"/>
+        <p>
+        What size of pokemon do you like?
+        <select name="sizes">
+            <option value='all'>All types</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+        </p>
+
+        <p>
+            Translate ability name to:
+            (If you choose the language other than English, you cannot check the ability rarity)
+            <select name="translation">
+                <option value='AbilityName'>English</option>
+                <option value='ChineseName'>Chinese</option>
+                <option value="JapaneseName">Japanese</option>
+            </select>
+        </p>
+        <p>
+            What's your lucky number?
+        </p> 
+        <input name="index" type="text" class="form-control"/>
+        <p>What type of pokemon do you like?</p>
+    </div>
+    <br/>
+    <table class="table table-bordered" style="width:75%; margin: 0 auto;">
+        <tr>
+            <td> 
+                <input type="radio" name="type" value="Bug" class="radio-inline">Bug
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/7/7d/Bug.png/revision/latest/scale-to-width-down/64?cb=20161013132753' width='10%'>
+            </td> 
+            <td>
+                <input type="radio" name="type" value="Dark" class="radio-inline">Dark
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/0/0e/Dark.png/revision/latest/scale-to-width-down/64?cb=20161013132800' width='10%'>
+            </td> 
+            <td>
+                <input type="radio" name="type" value="Dragon" class="radio-inline">Dragon
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/c/c7/Dragon.png/revision/latest/scale-to-width-down/64?cb=20161013132807' width='10%'> 
+            </td> 
+               
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="type" value="Electric" class="radio-inline">Electric
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/2/2f/Electric.png/revision/latest/scale-to-width-down/64?cb=20161013132813' width='10%'>
+            </td>  
+            <td>
+                <input type="radio" name="type" value="Fairy" class="radio-inline">Fairy
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/4/43/Fairy.png/revision/latest/scale-to-width-down/64?cb=20161013132820' width='10%'>
+            </td>
+            <td>
+                <input type="radio" name="type" value="Fighting" class="radio-inline">Fighting
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/3/30/Fighting.png/revision/latest/scale-to-width-down/64?cb=20161013132827' width='10%'>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="type" value="Fire" class="radio-inline">Fire
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/3/30/Fire.png/revision/latest/scale-to-width-down/64?cb=20161013132833'>
+            </td>
+            <td>
+                <input type="radio" name="type" value="Flying" class="radio-inline">Flying
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/7/7f/Flying.png/revision/latest/scale-to-width-down/64?cb=20161013132839'>
+            </td>
+            <td>
+                <input type="radio" name="type" value="Ghost" class="radio-inline">Ghost
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/a/ab/Ghost.png/revision/latest/scale-to-width-down/64?cb=20161013132847'>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="type" value="Grass" class="radio-inline">Grass
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/c/c5/Grass.png/revision/latest/scale-to-width-down/64?cb=20161013132855'>
+            </td>
+            <td>
+                <input type="radio" name="type" value="Ground" class="radio-inline">Ground
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/8/8f/Ground.png/revision/latest/scale-to-width-down/64?cb=20161013132902'>
+            </td>
+            <td>
+                <input type="radio" name="type" value="Ice" class="radio-inline">Ice
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/7/77/Ice.png/revision/latest/scale-to-width-down/64?cb=20161013132908'>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="type" value="Normal" class="radio-inline">Normal
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/f/fb/Normal.png/revision/latest/scale-to-width-down/64?cb=20161013132914'>
+            </td>
+            <td>
+                <input type="radio" name="type" value="Poison" class="radio-inline">Poison
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/0/05/Poison.png/revision/latest/scale-to-width-down/64?cb=20161013133014'>
+            </td>
+            <td>
+                <input type="radio" name="type" value="Psychic" class="radio-inline">Psychic
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/2/21/Psychic.png/revision/latest/scale-to-width-down/64?cb=20161013133006'>
+            </td>
+            
+        </tr> 
+        <tr>
+            <td>
+                <input type="radio" name="type" value="Ice" class="radio-inline">Rock
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/0/0b/Rock.png/revision/latest/scale-to-width-down/64?cb=20161013133022'>
+            </td>
+            <td>
+                <input type="radio" name="type" value="Steel" class="radio-inline">Steel
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/c/c9/Steel.png/revision/latest/scale-to-width-down/64?cb=20161013133029'>
+            </td>
+            <td>
+                <input type="radio" name="type" value="Water" class="radio-inline">Water
+                <img src='https://vignette.wikia.nocookie.net/pokemongo/images/9/9d/Water.png/revision/latest/scale-to-width-down/64?cb=20161013133222'>
+            </td>
+        </tr> 
+    </table>
+    <p><a href='/ability'>Check the Ability Rarity Graph for reference</a></p>
+    <p><a href='/sizes'>Check the Size Bar Graph for reference</a></p>
+    <input type="submit" value="Submit Form"/>
+    </form>
+    <footer>
+        <p>Designed by Yuxuan Li</p>
+        <p>School of Information SI 507 Final Project</p>
+    </footer>
+</body>
+</html>
+
+
